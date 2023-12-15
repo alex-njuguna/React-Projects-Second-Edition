@@ -1,9 +1,9 @@
 import './Task.css'
 
-function Task({title, body}) {
+function Task({ id, title, body, onDragStart}) {
 
     return (
-        <div className='Task-Wrapper'>
+        <div className='Task-Wrapper' draggable onDragStart={(e) => onDragStart(e, id)}>
             <h3>{title}</h3>
             <p>{body}</p>
         </div>
